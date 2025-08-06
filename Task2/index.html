@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.form-container {
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form textarea {
+  resize: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: green;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="fullName" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="text" id="subject" placeholder="Subject" required />
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="formMsg" class="message"></p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const form = document.getElementById("contactForm");
+const formMsg = document.getElementById("formMsg");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("fullName").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const subject = document.getElementById("subject").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !subject || !message) {
+    formMsg.textContent = "Please fill in all fields.";
+    formMsg.style.color = "red";
+    return;
+  }
+
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!emailPattern.test(email)) {
+    formMsg.textContent = "Please enter a valid email address.";
+    formMsg.style.color = "red";
+    return;
+  }
+
+  // If passed validation
+  formMsg.textContent = "Message sent successfully!";
+  formMsg.style.color = "green";
+  form.reset();
+});
+
+
+  </script>
+</body>
+</html>

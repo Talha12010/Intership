@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 1</title>
+  <link rel="stylesheet" href="style.css" />
+  </head>
+<body>
+
+  <button class="toggle-btn" id="toggleBtn">
+  </button>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">
+  <img src="" alt="Logo" />
+</div>
+    <ul class="icons">
+      <li><i ></i> <span>Home</span></li>
+      <li><i ></i> <span>Profile</span></li>
+      <li><i ></i> <span>Contact</span></li>
+      <li><i ></i> <span>About</span></li>
+      <li><i ></i> <span>Services</span></li>
+    </ul>
+  </aside>
+
+  <div class="content">
+    <h1>Welcome to my TASK 1 </h1>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleBtn");
+const sidebar = document.getElementById("sidebar");
+
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
+  </script>
+</body>
+</html>
