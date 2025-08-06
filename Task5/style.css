@@ -1,0 +1,89 @@
+body.dark-mode {
+    background-color: #121212;
+    color: #eee;
+  }
+
+  header, section, footer {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background:  #0072ff;
+    color: white;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero button {
+    padding: 0.8rem 1.5rem;
+    background-color: white;
+    color: #0072ff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  .features, .pricing {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: white;
+  }
+
+  .dark-mode .card {
+    background-color: #1e1e1e;
+    border-color: #444;
+  }
+
+  .test {
+    font-style: italic;
+    margin: 1rem 0;
+  }
+
+  .cta {
+    text-align: center;
+    background-color: #0072ff;
+    color: white;
+    padding: 2rem;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+  }
+
+  #themeToggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: black;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button {
+    padding: 0.8rem 1.5rem;
+    background-color: white;
+    color: #0072ff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+  }
